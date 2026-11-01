@@ -2,40 +2,35 @@
 
 承认吧，你受够了每开一个新会话，AI 都要重新认识你一遍。
 
-你不说，它就按默认的来：先问三个问题，再铺一大段背景，最后问你"要不要继续"。
-你讲过很多次"直接给结论"，它这一轮记住了，下一轮又忘了。
+你不说，它就按默认的来：先问三个问题，再铺一大段背景，最后问你"要不要继续"。你多次讲"直接给出结论"，这一轮记住了，下一轮又忘了。
 
-也受够了随意说一句话，AI 就如获至宝一样将其加入到记忆中——让 AI 自己从聊天里总结你。
-但那是个黑箱：它总结成什么样、有没有总结歪，你看不见。
+也受够了随意说一句话，AI 就如获至宝一样将其加入到记忆中——让 AI 自己从聊天里总结你。但那是个黑箱：它总结成什么样、有没有总结歪，你看不见。
 
-这个插件换了个方向：**先根据你做出的选择，画出你的灵魂画像，放在AI一开始就能读到的地方。**
+这个插件换了个方向：**先根据你所做的选择，画出你的灵魂画像，放在 AI 一开始就能读到的位置。**
 
-24 道选择题，3 分钟。答完你先看摘要，不满意就改，改到满意再启用。
-之后每次对话，它开局就知道该怎么跟你配合——不用你重复，也不用它猜。
+24 道选择题，3 分钟。回答完你先看摘要，不满意就改，改到满意再启用。之后每次对话，它开局就知道该怎么跟你配合——不用你重复，也不用它猜。
 
-（这不是人格测试，也不是心理诊断。它只是把你想要的配合方式写下来。）
+（这不是人格测试，也不是心理诊断。）
 
-不想用了随时关掉或删掉。它只是一段文字，你不点"启用"，它不会进提示词。
+不想用了随时可以关掉或删掉。你不点"启用"，它就绝对不会自动进入提示词。
 
 ---
 
 **English**
 
-Admit it — you're fed up with every new session starting with the model getting to know you all over again.
+Admit it — you're fed up with every new session starting with the AI getting to know you all over again.
 
-Say nothing, and it falls back to its defaults: three questions first, then a wall of context, then "shall I keep going?"
-You've said "just give me the conclusion" plenty of times. It remembers this session, forgets by the next.
+Say nothing, and it falls back to its defaults: three questions first, then a wall of context, then "shall I keep going?" You've said "just give me the conclusion" many times. It remembers this round, forgets by the next.
 
-You're just as fed up with the other thing: drop one casual sentence and the model treats it like treasure, files it into memory, and starts summarising who you are from your chats. That's a black box — you can't see what it concluded, or whether it got you wrong.
+You're just as fed up with the other thing: drop one casual sentence and the AI treats it like treasure, files it into memory, and starts summarising you from your chats. But it's a black box: you can't see what it concluded, or whether it got you wrong.
 
-This plugin goes the other way: **draw your Soul Profile from the choices you make, and place it where the AI reads first.**
+This plugin goes the other way: **draw your Soul Profile from the choices you make, and put it where the AI can read it from the very start.**
 
-24 click-choice items, 3 minutes. You read the summary first, change whatever doesn't feel right, and enable it once it does.
-From then on, every conversation opens with it already knowing how to work with you — no repeating yourself, no guessing.
+24 click-choice items, 3 minutes. Answer them, read the summary first, change whatever you're not happy with, and enable it once it feels right. From then on, every conversation opens with it already knowing how to work with you — no repeating yourself, no guessing.
 
-(This is not a personality test or a psychological assessment. It just writes down how you want to be worked with.)
+(This is not a personality test or a psychological assessment.)
 
-Turn it off or delete it whenever you like. It's just text — nothing reaches the prompt until you hit enable.
+Turn it off or delete it whenever you like. Unless you hit "enable", it will never enter the prompt on its own.
 
 ---
 

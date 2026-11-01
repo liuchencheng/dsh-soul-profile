@@ -1,5 +1,11 @@
 # 更新记录 / Changelog
 
+## 2.1.12
+
+- 开头按作者新稿重写：句子更口语、更短，删掉「它只是把你想要的配合方式写下来」，结尾改为「你不点『启用』，它就绝对不会自动进入提示词」。 Reworked the opening from the author's new draft: shorter, more spoken sentences; the trailing clause about writing down preferences is gone, and the ending now stresses that nothing enters the prompt unless you enable it.
+- 顺手修掉原稿里的几处笔误（下一轮 / 要不要继续 / 再启用 / 每次对话 / 但那是个黑箱 / AI 前后空格），避免公开仓库出现错字。 Fixed several typos from the draft so the public README has none.
+- 英文同步改写，与中文逐句对应。 Rewrote the English to match line by line.
+
 ## 2.1.11
 
 - 核心句改为「先根据你做出的选择，画出你的灵魂画像，放在 AI 一开始就能读到的地方」——把产品名「灵魂画像」直接写进主张里。 The pitch line now reads “draw your Soul Profile from the choices you make, and place it where the AI reads first”, putting the product name into the claim itself.
