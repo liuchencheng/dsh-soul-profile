@@ -1,6 +1,6 @@
 {
   "name": "dsh-soul-profile",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "private": true,
   "type": "module",
   "description": "灵魂画像 / Soul Profile —— 在 DeepSeek Harness 里填写一次协作偏好，之后每次对话都按你的方式工作：24 道点击题、可改摘要、只注入你确认过的偏好。 | Soul Profile — answer 24 click-choice items once and DeepSeek Harness adapts to how you collaborate: editable summary, injected only after you confirm it.",

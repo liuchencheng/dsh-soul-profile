@@ -115,9 +115,16 @@ function SoulProfileOnboarding(props: Props): ReactNode {
     setScreenState(next)
   }
 
-  /** Close the dialog and drop the draft, so reopening starts clean. */
+  /**
+   * Close the dialog and drop the draft, so reopening starts clean.
+   *
+   * The local screen is cleared as well: `complete()` may only mark the step
+   * done without unmounting this component, and a lingering `screen` would keep
+   * the modal on screen.
+   */
   const finish = (): void => {
     resetDraft()
+    setScreenState(null)
     complete()
   }
 

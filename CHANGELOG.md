@@ -1,5 +1,10 @@
 # 更新记录 / Changelog
 
+## 2.1.3
+
+- 修复关闭弹窗可能不消失的问题：`finish()` 之前只清模块级草稿，没有清组件内的 `screen`；如果宿主调 `complete()` 时并不卸载这个组件，弹窗会留在屏幕上。现在两处一起清。 Fixed a case where the dialog could stay open: `finish()` cleared the module-level draft but not the component's `screen` state, so a host that marks the step done without unmounting would leave the modal on screen.
+- README 补充删除档案后的行为：引导弹窗不会再自动出现，重填要走设置。 Documented what happens after deleting: the onboarding dialog will not reappear, so retaking goes through Settings.
+
 ## 2.1.2
 
 - 便携 CLI（`skill/tools/profile.py`）的默认建议改为与插件一致的祈使句：此前只有插件改成了可执行指令，CLI 仍输出「计划保留弹性，允许过程中调整」这类描述句，同一条档案走两条路径得到两种质量。 The portable CLI now emits the same imperative instructions as the plugin; previously only the plugin had been upgraded, so the same profile produced different quality depending on the path taken.
