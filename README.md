@@ -41,15 +41,15 @@ Turn it off or delete it whenever you like. It's just text — nothing reaches t
 
 ## 装：3 步
 
-1. 打开 Harness → **设置 → 插件 → 安装**
+1. 打开 Harness → **插件 → 添加插件**
 2. 粘贴**本目录**的绝对路径（就是有 `package.json` 的这一层）
 3. **重启 Harness**
 
-```
-<仓库所在位置>\dsh-soul-profile
-```
+**English**
 
-> ⚠️ 别用 `dsh plugin add`：命令行明确禁止操作 `desktop` profile，桌面端只能走上面的界面。
+1. Open Harness → **Plugins → Add plugin**
+2. Paste the absolute path of **this folder** — the one containing `package.json`
+3. **Restart Harness**
 
 ## 用
 
@@ -63,6 +63,19 @@ Turn it off or delete it whenever you like. It's just text — nothing reaches t
 关掉弹窗 ≠ 关掉档案。想让它**不再自动弹**，得走完问卷点「不启用」，或者填完后去设置里关。
 
 删除档案后，引导弹窗也不会再自动出现——想重新填写请自己去 **设置 → 灵魂画像**。
+
+**English**
+
+| I want to… | Where |
+|---|---|
+| Set it up | The questionnaire opens after restart: tick consent → answer → save and enable |
+| Edit it | Settings → Soul Profile → Manage profile → Retake |
+| Pause it | Same place → Disable profile (content stays; reopen anytime) |
+| Clear it | Same place → Delete profile (cannot be undone) |
+
+Closing the dialog is not the same as disabling the profile. To stop it **auto-appearing**, finish the questionnaire and pick “Do not enable”, or disable it in Settings afterwards.
+
+After deleting, the onboarding dialog will not come back on its own — go to **Settings → Soul Profile** to start again.
 
 ## 兼容
 
@@ -82,8 +95,25 @@ Turn it off or delete it whenever you like. It's just text — nothing reaches t
 查自己的版本：`<安装目录>/resources/app/dsh/package.json` 里的 `version`。装不上时 Harness 会直接告诉你它检测到的版本。
 
 > 这是 `@deepseek-ai/dsh` 运行时版本，不是桌面端安装包版本。每个人的版本可能不同。
->
-> *Runtime version, not the desktop installer version. Yours may differ.*
+
+**English**
+
+Requires **DSH runtime ≥ `0.2.1-rc.2` and `< 0.3.0`**.
+
+| Version | Installable | Verification |
+|---|---|---|
+| < `0.2.1-rc.2` | ❌ | — |
+| `0.2.1-rc.2` | ✅ | Runs in a live Harness |
+| `0.2.1-rc.3` / `-rc.4` | ✅ | Version range only |
+| `0.2.1-rc.5` | ✅ | Type-checked |
+| `0.2.2-alpha.2` | ✅ | Type-checked |
+| ≥ `0.3.0` | ❌ | — |
+
+“Type-checked” means the API signatures still match, but the plugin has **not** been loaded in a real Harness of that version.
+
+To check your version: the `version` field of `<install dir>/resources/app/dsh/package.json`. A refused install also reports the version Harness detected.
+
+> This is the `@deepseek-ai/dsh` runtime version, not the desktop installer version. Yours may differ.
 
 ## 目录
 
@@ -97,6 +127,18 @@ dsh-soul-profile/
 └── README.md · INSTALL.md · SPEC.md · CHANGELOG.md
 ```
 
+**English**
+
+```
+dsh-soul-profile/
+├── package.json · cordis.patch.yml   ← plugin manifest
+├── src/ · lib/                        ← source and build output
+├── skill/                             ← portable Skill (not part of the plugin tarball)
+│   ├── SKILL.md · questions.json      ← questionnaire and docs
+│   └── schema/ · tools/ · tests/ · examples/
+└── README.md · INSTALL.md · SPEC.md · CHANGELOG.md
+```
+
 ## 边界
 
 - 只记录**你确认过的摘要**，原始答案不保存
@@ -104,7 +146,12 @@ dsh-soul-profile/
 - 你的当前指令永远优先于档案
 - 档案只属于当前 profile
 
-*Only the confirmed summary is stored. Fewer than two answers in a dimension means unknown. Your current instruction always wins. The profile belongs to one profile only.*
+**English**
+
+- Only the summary **you confirmed** is stored; raw answers are not
+- A dimension with fewer than 2 answers is recorded as unknown
+- Your current instruction always outranks the profile
+- The profile belongs to one profile only
 
 ## 开发
 
@@ -116,3 +163,14 @@ python scripts/check-instruction-parity.py  # 校验插件与 CLI 的指令文�
 ```
 
 指令文案在 `src/client/index.tsx`（注入系统提示）和 `skill/tools/profile.py`（离线 CLI）各存一份，改一处必须同步另一处，最后一条命令就是查这个。
+
+**English**
+
+```sh
+npm install
+npm run verify                              # type check + tests + build
+python -m unittest discover -s skill/tests  # portable Skill tests
+python scripts/check-instruction-parity.py  # verify the plugin and CLI instruction copy match
+```
+
+The instruction text lives in two places — `src/client/index.tsx` (injected into the system prompt) and `skill/tools/profile.py` (offline CLI). Change one, change the other; the last command checks it.

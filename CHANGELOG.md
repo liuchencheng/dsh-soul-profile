@@ -1,5 +1,10 @@
 # 更新记录 / Changelog
 
+## 2.1.6
+
+- README 与 INSTALL 全文改为中英对照：中文原样保留，每个小节后补英文，表格各配一份英译。 Both README and INSTALL are now bilingual: the Chinese is untouched, every section is followed by an English counterpart, and each table has an English version.
+- 中文一处同步：INSTALL 的安装入口改为与 README 一致的「插件 → 添加插件」。 One Chinese line synced: INSTALL now points at “Plugins → Add plugin”, matching the README.
+
 ## 2.1.5
 
 - README 开头改用作者本人的版本：开头「承认吧，你受够了…」直接戳痛点，并补上「随便一句话就被塞进记忆」这一条，核心句从「你自己说」改为「先创造一个潜意识状态下的你」。 The README opening now uses the author's own wording: it opens with “admit it”, adds the complaint about one casual remark being filed as memory, and reframes the pitch as “create a subconscious version of you”.
