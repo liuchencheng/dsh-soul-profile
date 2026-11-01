@@ -1,0 +1,347 @@
+{
+  "version": "2.0.0",
+  "dimensions": [
+    {
+      "id": "structure",
+      "name": "计划与灵活度",
+      "low": "灵活安排",
+      "high": "按计划走",
+      "name_en": "Planning and flexibility",
+      "low_en": "Flexible",
+      "high_en": "Planned"
+    },
+    {
+      "id": "social_energy",
+      "name": "社交刺激偏好",
+      "low": "安静、一对一",
+      "high": "热闹、一起聊",
+      "name_en": "Social stimulation",
+      "low_en": "Quiet, one-to-one",
+      "high_en": "Lively, together"
+    },
+    {
+      "id": "information_style",
+      "name": "信息接收方式",
+      "low": "具体例子",
+      "high": "整体概览",
+      "name_en": "Information style",
+      "low_en": "Concrete examples",
+      "high_en": "Big picture"
+    },
+    {
+      "id": "decision_basis",
+      "name": "决策侧重",
+      "low": "看对人的影响",
+      "high": "看证据和标准",
+      "name_en": "Decision emphasis",
+      "low_en": "Impact on people",
+      "high_en": "Evidence and rules"
+    },
+    {
+      "id": "expression",
+      "name": "表达方式",
+      "low": "简短含蓄",
+      "high": "多讲背景",
+      "name_en": "Expression style",
+      "low_en": "Brief and understated",
+      "high_en": "Context and feeling"
+    },
+    {
+      "id": "feedback",
+      "name": "反馈方式",
+      "low": "温和委婉",
+      "high": "直接了当",
+      "name_en": "Feedback style",
+      "low_en": "Gentle and framed",
+      "high_en": "Direct and plain"
+    },
+    {
+      "id": "autonomy",
+      "name": "协作自主度",
+      "low": "多沟通",
+      "high": "独立做",
+      "name_en": "Collaboration autonomy",
+      "low_en": "Check in often",
+      "high_en": "Work independently"
+    },
+    {
+      "id": "stress_support",
+      "name": "压力时的支持方式",
+      "low": "先听我说",
+      "high": "先给方案",
+      "name_en": "Support under stress",
+      "low_en": "Listen first",
+      "high_en": "Solutions first"
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q01",
+      "dimension": "structure",
+      "a": "先干起来，边做边摸清",
+      "b": "先想清楚步骤，再开始动手",
+      "a_value": -1,
+      "a_en": "Jump in and figure it out as I go",
+      "b_en": "Work out the steps first, then start",
+      "scenario": "接手一件没做过的事",
+      "scenario_en": "Taking on something I've never done"
+    },
+    {
+      "id": "Q02",
+      "dimension": "structure",
+      "a": "先把每天要做的事列出来",
+      "b": "先定个大概，中途再调整",
+      "a_value": 1,
+      "a_en": "List what to do each day up front",
+      "b_en": "Set a rough direction and adjust along the way",
+      "scenario": "开始一个要花好几天的工作",
+      "scenario_en": "Starting work that takes several days"
+    },
+    {
+      "id": "Q03",
+      "dimension": "structure",
+      "a": "留出空档，临时再定",
+      "b": "提前排好，按表走",
+      "a_value": -1,
+      "a_en": "Leave gaps and decide later",
+      "b_en": "Plan ahead and follow the schedule",
+      "scenario": "安排接下来一周",
+      "scenario_en": "Planning the coming week"
+    },
+    {
+      "id": "Q04",
+      "dimension": "social_energy",
+      "a": "一群人一起聊，边说边想",
+      "b": "自己先想清楚，或只跟一个人聊",
+      "a_value": 1,
+      "a_en": "Talk it through with a group",
+      "b_en": "Think it through alone, or with one person",
+      "scenario": "遇到一个要拿主意的问题",
+      "scenario_en": "Facing a problem that needs a decision"
+    },
+    {
+      "id": "Q05",
+      "dimension": "social_energy",
+      "a": "热闹一天后，我需要独处缓一缓",
+      "b": "跟人聊完，我通常更有精神",
+      "a_value": -1,
+      "a_en": "After a busy day with people I need time alone",
+      "b_en": "Talking with people usually leaves me energized",
+      "scenario": "连续和人打交道一整天之后",
+      "scenario_en": "After a full day around people"
+    },
+    {
+      "id": "Q06",
+      "dimension": "social_energy",
+      "a": "你来我往、节奏快的对话",
+      "b": "安静、能慢慢说的对话",
+      "a_value": 1,
+      "a_en": "Fast back-and-forth conversation",
+      "b_en": "Quiet conversation with room to think",
+      "scenario": "聊天时我更享受",
+      "scenario_en": "In conversation I enjoy"
+    },
+    {
+      "id": "Q07",
+      "dimension": "information_style",
+      "a": "先给我一个具体的例子",
+      "b": "先告诉我整体是怎么回事",
+      "a_value": -1,
+      "a_en": "Give me a concrete example first",
+      "b_en": "Tell me the big picture first",
+      "scenario": "了解一件新事物",
+      "scenario_en": "Getting to know something new"
+    },
+    {
+      "id": "Q08",
+      "dimension": "information_style",
+      "a": "先聊有哪些可能、意味着什么",
+      "b": "先说现在能确认的事实",
+      "a_value": 1,
+      "a_en": "Explore what could happen and what it means",
+      "b_en": "Start with what we can confirm right now",
+      "scenario": "讨论一个还没有定论的方案",
+      "scenario_en": "Discussing a plan that isn't settled yet"
+    },
+    {
+      "id": "Q09",
+      "dimension": "information_style",
+      "a": "看几个真实案例，我就懂了",
+      "b": "先看一张全景图，再看案例",
+      "a_value": -1,
+      "a_en": "Show me a few real cases and I get it",
+      "b_en": "Show me the whole picture, then the cases",
+      "scenario": "学一个新概念",
+      "scenario_en": "Learning a new concept"
+    },
+    {
+      "id": "Q10",
+      "dimension": "decision_basis",
+      "a": "把证据摆出来，用同一套标准比",
+      "b": "先看这个决定会影响到谁",
+      "a_value": 1,
+      "a_en": "Lay out the evidence and compare by the same standard",
+      "b_en": "Start with who this decision affects",
+      "scenario": "在两个方案之间选一个",
+      "scenario_en": "Choosing between two options"
+    },
+    {
+      "id": "Q11",
+      "dimension": "decision_basis",
+      "a": "同样的规则，也要看各人的具体情况",
+      "b": "同样的规则，对所有人一样执行",
+      "a_value": -1,
+      "a_en": "Same rule, but each person's situation matters",
+      "b_en": "Same rule, applied the same way to everyone",
+      "scenario": "定规则、分资源的时候",
+      "scenario_en": "Setting rules or dividing resources"
+    },
+    {
+      "id": "Q12",
+      "dimension": "decision_basis",
+      "a": "先看哪种做法前后一致、说得通",
+      "b": "先看哪种做法对人伤害最小",
+      "a_value": 1,
+      "a_en": "Which option is consistent and holds together",
+      "b_en": "Which option hurts people least",
+      "scenario": "遇到两难的选择",
+      "scenario_en": "Facing a choice where both sides cost something"
+    },
+    {
+      "id": "Q13",
+      "dimension": "expression",
+      "a": "消息短一点，说清楚就行",
+      "b": "多说点背景，也说说我的感受",
+      "a_value": -1,
+      "a_en": "Keep it short and to the point",
+      "b_en": "Add context and say how I feel",
+      "scenario": "发消息说明一件事",
+      "scenario_en": "Explaining something in a message"
+    },
+    {
+      "id": "Q14",
+      "dimension": "expression",
+      "a": "多举几个例子，把细节讲透",
+      "b": "少说几句，直接讲重点",
+      "a_value": 1,
+      "a_en": "Use examples and spell out the details",
+      "b_en": "Say less and get straight to the point",
+      "scenario": "解释一个复杂的问题",
+      "scenario_en": "Explaining something complicated"
+    },
+    {
+      "id": "Q15",
+      "dimension": "expression",
+      "a": "语气平一点、低调一点",
+      "b": "语气暖一点、有起伏一点",
+      "a_value": -1,
+      "a_en": "A calm, low-key tone",
+      "b_en": "A warm, expressive tone",
+      "scenario": "我平时说话的语气",
+      "scenario_en": "My usual tone of voice"
+    },
+    {
+      "id": "Q16",
+      "dimension": "feedback",
+      "a": "有问题直接说，别绕",
+      "b": "先说背景，再慢慢提",
+      "a_value": 1,
+      "a_en": "Say the problem straight",
+      "b_en": "Set the context first, then raise it",
+      "scenario": "别人的方案有明显问题",
+      "scenario_en": "Someone's plan has an obvious problem"
+    },
+    {
+      "id": "Q17",
+      "dimension": "feedback",
+      "a": "先肯定做得好的地方，再说问题",
+      "b": "问题优先说清楚，语气直一点没关系",
+      "a_value": -1,
+      "a_en": "Acknowledge what works, then raise the problem",
+      "b_en": "State the problem clearly even if it lands hard",
+      "scenario": "要指出别人做得不对",
+      "scenario_en": "Pointing out that someone got it wrong"
+    },
+    {
+      "id": "Q18",
+      "dimension": "feedback",
+      "a": "有顾虑就当场说出来",
+      "b": "找个合适的时候，委婉地说",
+      "a_value": 1,
+      "a_en": "Raise the concern right away",
+      "b_en": "Pick a good moment and say it gently",
+      "scenario": "我对某件事有顾虑",
+      "scenario_en": "I have a concern about something"
+    },
+    {
+      "id": "Q19",
+      "dimension": "autonomy",
+      "a": "过程中多沟通，随时对齐",
+      "b": "先让我自己做完，再一起看结果",
+      "a_value": -1,
+      "a_en": "Check in with me as you go",
+      "b_en": "Let me finish on my own, then review together",
+      "scenario": "和别人一起做一件事",
+      "scenario_en": "Working on something with someone"
+    },
+    {
+      "id": "Q20",
+      "dimension": "autonomy",
+      "a": "告诉我目标就行，怎么做我自己定",
+      "b": "先一起把方案聊出来",
+      "a_value": 1,
+      "a_en": "Give me the goal and let me decide how",
+      "b_en": "Work out the approach with me first",
+      "scenario": "接到一个任务",
+      "scenario_en": "Being handed a task"
+    },
+    {
+      "id": "Q21",
+      "dimension": "autonomy",
+      "a": "经常给我一点进度，我心里有底",
+      "b": "关键节点说一声就够了",
+      "a_value": -1,
+      "a_en": "Frequent small updates keep me at ease",
+      "b_en": "A short update at milestones is enough",
+      "scenario": "别人替我推进一件事",
+      "scenario_en": "Someone else is carrying work forward for me"
+    },
+    {
+      "id": "Q22",
+      "dimension": "stress_support",
+      "a": "先帮我想怎么补救",
+      "b": "先听我说完，别急着出主意",
+      "a_value": 1,
+      "a_en": "Help me figure out how to fix it",
+      "b_en": "Hear me out before offering solutions",
+      "scenario": "我把事情搞砸了",
+      "scenario_en": "I've messed something up"
+    },
+    {
+      "id": "Q23",
+      "dimension": "stress_support",
+      "a": "先让我随便说说",
+      "b": "先给我一个能做的小步骤",
+      "a_value": -1,
+      "a_en": "Let me talk it out first",
+      "b_en": "Give me one small step I can take",
+      "scenario": "我压力很大、说不清楚",
+      "scenario_en": "I'm overwhelmed and can't explain it well"
+    },
+    {
+      "id": "Q24",
+      "dimension": "stress_support",
+      "a": "先看哪些地方还能改",
+      "b": "先让我觉得你懂我的处境",
+      "a_value": 1,
+      "a_en": "Look at what can still change",
+      "b_en": "Let me feel that you get what I'm up against",
+      "scenario": "我在抱怨一个很难改的问题",
+      "scenario_en": "I'm venting about a problem that's hard to change"
+    }
+  ],
+  "title_zh": "灵魂画像 / Soul Profile 协作偏好问卷",
+  "title_en": "Soul Profile Collaboration Preference Questionnaire",
+  "instructions_zh": "请选择通常更自然或省力的选项，而不是看起来更理想的选项；不确定时可以跳过。",
+  "instructions_en": "Choose what usually feels more natural or easier, rather than what seems ideal; skip any item you are unsure about."
+}

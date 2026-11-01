@@ -1,0 +1,78 @@
+{
+  "schema_version": "2.0.0",
+  "profile_type": "collaboration_preferences",
+  "language": "both",
+  "created_at": "2026-11-01",
+  "consent_acknowledged": true,
+  "dimensions": {
+    "structure": {
+      "name": "计划与灵活度",
+      "name_en": "Planning and flexibility",
+      "pole": "mixed",
+      "answered": 2,
+      "confidence": "medium"
+    },
+    "social_energy": {
+      "name": "社交刺激偏好",
+      "name_en": "Social stimulation",
+      "pole": "mixed",
+      "answered": 2,
+      "confidence": "medium"
+    },
+    "information_style": {
+      "name": "信息接收方式",
+      "name_en": "Information style",
+      "pole": "mixed",
+      "answered": 2,
+      "confidence": "medium"
+    },
+    "decision_basis": {
+      "name": "决策侧重",
+      "name_en": "Decision emphasis",
+      "pole": "mixed",
+      "answered": 2,
+      "confidence": "medium"
+    },
+    "expression": {
+      "name": "表达方式",
+      "name_en": "Expression style",
+      "pole": "mixed",
+      "answered": 2,
+      "confidence": "medium"
+    },
+    "feedback": {
+      "name": "反馈方式",
+      "name_en": "Feedback style",
+      "pole": "mixed",
+      "answered": 2,
+      "confidence": "medium"
+    },
+    "autonomy": {
+      "name": "协作自主度",
+      "name_en": "Collaboration autonomy",
+      "pole": "mixed",
+      "answered": 2,
+      "confidence": "medium"
+    },
+    "stress_support": {
+      "name": "压力时的支持方式",
+      "name_en": "Support under stress",
+      "pole": "mixed",
+      "answered": 2,
+      "confidence": "medium"
+    }
+  },
+  "collaboration_preferences": {
+    "response_defaults": [],
+    "user_overrides": [
+      "优先给出结论 / Lead with the conclusion",
+      "涉及选择时列出利弊 / Show the pros and cons when comparing options"
+    ]
+  },
+  "safety": {
+    "non_diagnostic": true,
+    "current_instruction_wins": true,
+    "reviewed_by_user": false,
+    "notes": "非正式的偏好快照；答题覆盖度不代表测量效度。 Informal preference snapshot; answer coverage does not indicate measurement validity."
+  }
+}

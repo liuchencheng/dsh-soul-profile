@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/soul-profile/profile.schema.json",
+  "title": "灵魂画像 / Soul Profile 协作偏好档案 / Collaboration preference profile",
+  "description": "用户可编辑的协作偏好快照；非诊断，不代表经验证的心理测量结果。 User-editable collaboration preference snapshot; non-diagnostic and not a validated psychological measure.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "profile_type", "created_at", "consent_acknowledged", "dimensions", "collaboration_preferences", "safety"],
+  "properties": {
+    "schema_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "profile_type": {"const": "collaboration_preferences"},
+    "language": {"enum": ["zh", "en", "both"]},
+    "created_at": {"type": "string", "format": "date"},
+    "consent_acknowledged": {"const": true},
+    "dimensions": {
+      "type": "object",
+      "required": ["structure", "social_energy", "information_style", "decision_basis", "expression", "feedback", "autonomy", "stress_support"],
+      "properties": {
+        "structure": {"$ref": "#/$defs/dimension"},
+        "social_energy": {"$ref": "#/$defs/dimension"},
+        "information_style": {"$ref": "#/$defs/dimension"},
+        "decision_basis": {"$ref": "#/$defs/dimension"},
+        "expression": {"$ref": "#/$defs/dimension"},
+        "feedback": {"$ref": "#/$defs/dimension"},
+        "autonomy": {"$ref": "#/$defs/dimension"},
+        "stress_support": {"$ref": "#/$defs/dimension"}
+      },
+      "additionalProperties": false
+    },
+    "collaboration_preferences": {
+      "type": "object",
+      "required": ["response_defaults", "user_overrides"],
+      "properties": {
+        "response_defaults": {"type": "array", "items": {"type": "string"}},
+        "user_overrides": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "safety": {
+      "type": "object",
+      "required": ["non_diagnostic", "current_instruction_wins", "reviewed_by_user", "notes"],
+      "properties": {
+        "non_diagnostic": {"const": true},
+        "current_instruction_wins": {"const": true},
+        "reviewed_by_user": {"type": "boolean"},
+        "notes": {"type": "string"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "dimension": {
+      "type": "object",
+      "required": ["name", "pole", "answered", "confidence"],
+      "properties": {
+        "name": {"type": "string", "description": "中文维度名称 / Chinese dimension name"},
+        "name_en": {"type": "string", "description": "英文维度名称 / English dimension name"},
+        "score": {"type": ["integer", "null"], "enum": [0, 33, 50, 67, 100, null], "description": "仅供兼容历史档案；新版本不生成此字段。Legacy compatibility only; not emitted by current versions."},
+        "pole": {"enum": ["low", "high", "mixed", "unknown"]},
+        "answered": {"type": "integer", "minimum": 0, "maximum": 3},
+        "confidence": {"enum": ["low", "medium", "high"]}
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {"if": {"properties": {"answered": {"maximum": 1}}, "required": ["answered"]}, "then": {"properties": {"pole": {"const": "unknown"}, "confidence": {"const": "low"}, "score": {"const": null}}}},
+        {"if": {"properties": {"pole": {"const": "unknown"}}, "required": ["pole"]}, "then": {"properties": {"answered": {"maximum": 1}, "score": {"const": null}}}},
+        {"if": {"properties": {"answered": {"const": 2}}, "required": ["answered"]}, "then": {"properties": {"confidence": {"const": "medium"}}}},
+        {"if": {"properties": {"answered": {"const": 3}}, "required": ["answered"]}, "then": {"properties": {"confidence": {"const": "high"}}}},
+        {"if": {"properties": {"pole": {"const": "low"}}, "required": ["pole"]}, "then": {"properties": {"answered": {"minimum": 2}, "score": {"enum": [0, 33]}}}},
+        {"if": {"properties": {"pole": {"const": "mixed"}}, "required": ["pole"]}, "then": {"properties": {"answered": {"minimum": 2}, "score": {"const": 50}}}},
+        {"if": {"properties": {"pole": {"const": "high"}}, "required": ["pole"]}, "then": {"properties": {"answered": {"minimum": 2}, "score": {"enum": [67, 100]}}}},
+        {"if": {"properties": {"score": {"const": 33}}, "required": ["score"]}, "then": {"properties": {"answered": {"const": 3}, "pole": {"const": "low"}}}},
+        {"if": {"properties": {"score": {"const": 67}}, "required": ["score"]}, "then": {"properties": {"answered": {"const": 3}, "pole": {"const": "high"}}}}
+      ]
+    }
+  }
+}

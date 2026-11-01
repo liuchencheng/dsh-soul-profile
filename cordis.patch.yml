@@ -1,0 +1,11 @@
+# dsh-soul-profile bundle 层：插入「灵魂画像 / Soul Profile」插件行。
+#
+# 一行 insert 即挂载 Host 半身（lib/index.mjs，向 systemPrompt 注入用户确认过的
+# 协作偏好）；浏览器半身（lib/client.js）由 package.json 的 dsh.client 声明，
+# 绑定在 name 为裸包名的这一行上。
+#
+# id 与插件自身导出的 name 保持一致，便于在 cordis.yml 中按 id 覆盖 config。
+- insert:
+    - id: soul-profile
+      name: 'dsh-soul-profile'
+      config: {}

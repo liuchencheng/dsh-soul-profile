@@ -1,0 +1,22 @@
+# Node / 插件构建
+node_modules/
+*.tsbuildinfo
+*.tgz
+
+# Python / 便携 Skill
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+my-profile/
+
+# 本地与系统杂项
+.DS_Store
+Thumbs.db
+.env
+.env.*
+coverage/
+
+# 只用 npm 管理依赖；避免与 package-lock.json 冲突
+pnpm-lock.yaml
