@@ -3,7 +3,7 @@
 ## 2.1.1
 
 - 说明文档重写为「直接照做」的结构：README 首屏就是装 3 步 + 用 4 行表格，兼容性与边界压到后面；INSTALL 变成编号步骤 + 排错表。 Rewrote the docs around "just do this": the README opens with a three-step install and a four-row usage table, pushing compatibility and design limits down; INSTALL is now numbered steps plus a troubleshooting table.
-- 去掉逐句中英对照，改为中文正文 + 每节一行英文摘要，篇幅从 70 行降到 80 行以内且信息密度更高。 Dropped sentence-by-sentence bilingual duplication in favour of Chinese body text with one-line English summaries.
+- 去掉逐句中英对照，改为中文正文 + 每节一行英文摘要：行数相近（71 → 82），但安装步骤从第 40 行提到第 9 行，扫读成本大幅下降。 Dropped sentence-by-sentence bilingual duplication in favour of Chinese body text with one-line English summaries: about the same length (71 → 82 lines), but the install steps moved from line 40 to line 9.
 - 新增「装不上？按这个顺序查」表格，把 `incompatible-version`、路径选错、没重启、插件停用等常见情况一次性列清。 Added a troubleshooting table covering `incompatible-version`, wrong path, missing restart, and a disabled plugin.
 
 ## 2.1.0
