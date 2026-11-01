@@ -1,5 +1,10 @@
 # 更新记录 / Changelog
 
+## 2.1.4
+
+- 重写 README 开头：从「这个插件做什么」改成「为什么要有它」——每开一个新会话，AI 都要重新认识你一遍；让它自己从聊天里总结又是个看不见的黑箱。 Rewrote the README opening: instead of describing what the plugin does, it now explains why it exists — every new session starts from zero, and letting the model summarise you from past chats is a black box.
+- 开头改成第一人称口语短句，去掉营销腔与功能罗列；「不是人格测试」降级为一句括号补充，完整边界仍在文末。 The opening is now first-person and conversational, with the "not a personality test" note demoted to a parenthetical while the full limits stay at the end.
+
 ## 2.1.3
 
 - 修复关闭弹窗可能不消失的问题：`finish()` 之前只清模块级草稿，没有清组件内的 `screen`；如果宿主调 `complete()` 时并不卸载这个组件，弹窗会留在屏幕上。现在两处一起清。 Fixed a case where the dialog could stay open: `finish()` cleared the module-level draft but not the component's `screen` state, so a host that marks the step done without unmounting would leave the modal on screen.

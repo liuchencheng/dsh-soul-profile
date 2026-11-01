@@ -1,10 +1,23 @@
 # 灵魂画像 / Soul Profile
 
-给 DeepSeek Harness 答一次问卷（24 题，约 3 分钟），之后每次对话都按你的协作偏好来。
+每次开一个新会话，AI 都要重新认识你一遍。
 
-不是人格测试，不是心理诊断。答完可以改、可以关、可以删。
+你不说，它就按默认的来：先问三个问题，再铺一大段背景，最后问你"要不要继续"。
+你讲过很多次"直接给结论"，它这一轮记住了，下一轮又忘了。
 
-*Answer 24 click-choice questions once and DeepSeek Harness adapts to how you collaborate. Not a personality test. Editable, disableable, deletable.*
+也有人反过来做——让 AI 自己从聊天里总结你。
+但那是个黑箱：它总结成什么样、有没有总结歪，你看不见。
+
+这个插件换了个方向：**你自己说，一次说完，放在它一开始就能读到的地方。**
+
+24 道选择题，3 分钟。答完你先看摘要，不满意就改，改到满意再启用。
+之后每次对话，它开局就知道该怎么跟你配合——不用你重复，也不用它猜。
+
+（说清楚一点：这不是人格测试，也不是心理诊断。它只是把你想要的配合方式写下来。）
+
+不想用了随时关掉或删掉。它只是一段文字，你不点"启用"，它不会进提示词。
+
+*Every new session the model starts from zero. Instead of letting it guess who you are — or quietly summarising you from past chats — you say it once, up front, in the place it reads first. 24 click-choice items, 3 minutes, fully editable, disableable, deletable.*
 
 ---
 
