@@ -1,36 +1,55 @@
-# 安装与使用 / Install and use
+# 安装 / Install
 
-## DeepSeek Harness 插件 / DeepSeek Harness plugin
+## 桌面端（唯一推荐路径）
 
-此版本以 Harness Web 插件为主要入口。它使用 Harness 的 `settings.onboarding` 界面插槽显示首次引导，用户完成同意后才会看到点击式问卷。插件安装本身不会绕过 Harness：首次启动 Harness Web 并载入设置界面时显示引导；“稍后”会在下一次引导机会再次出现。插件版本为 `2.0.1`，Harness 目标版本为 `0.2.1-rc.2` 系列。
+**1.** 打开 Harness → **设置 → 插件 → 安装**
 
-This version targets the Harness Web plugin interface. It registers a first-run step in Harness's `settings.onboarding` slot. Installation does not silently accept anything: the dialog appears when the Web UI loads its settings shell. Choosing “Later” leaves it eligible for the next onboarding opportunity. Plugin version is `2.0.1`; the target DSH release is the `0.2.1-rc.2` line.
+**2.** 粘贴本仓库根目录的绝对路径 —— 就是有 `package.json` 的那一层：
 
-### 从本地目录安装 / Install from a local directory
-
-**桌面端（推荐）/ Desktop app (recommended)**
-
-1. 打开 DeepSeek Harness → 设置 → 插件 → 安装，粘贴**本仓库根目录**的绝对路径（该目录的 `package.json` 就是 `dsh-soul-profile`）。Open DeepSeek Harness → Settings → Plugins → Install, then paste the absolute path of **this repository root** — the folder whose `package.json` is `dsh-soul-profile`.
-2. 安装完成后重启 Harness。首次进入设置界面时会出现引导弹窗，可选择“稍后”或勾选同意再开始。Restart Harness after installing. The onboarding dialog appears the first time the settings shell loads; choose “Later” or opt in and start.
-3. 完成 24 道点击题后检查摘要，必要时修改；只有点击“保存并启用”后档案才进入当前 profile 的 Host 配置与后续 Agent 系统提示词。Answer the 24 click-choice questions, review and adjust the summary, then select “Save and enable” to store it in this profile and include it in later agent system prompts.
-4. 后续在 Harness 设置中的 **灵魂画像 / Soul Profile** 页面重新填写、查看或删除档案；该档案只属于当前 profile。Use **Soul Profile** in Harness Settings to retake, review or delete the profile. It belongs only to the current profile.
-
-> **CLI 限制 / CLI limitation**：`dsh` 命令行明确拒绝操作 `desktop` profile（`profile "desktop" is managed exclusively by the Electron application`），因此桌面端只能用上面的界面安装。CLI 的 `dsh plugin --profile <name> add <path>` 仅适用于非桌面 profile。The `dsh` CLI refuses the `desktop` profile (`profile "desktop" is managed exclusively by the Electron application`), so desktop installs must go through the UI above. `dsh plugin --profile <name> add <path>` applies to non-desktop profiles only.
-
-> 插件对 `engines.dsh` 声明 `>=0.2.1-rc.2 <0.3.0`。Harness 在安装时会比对这一范围，版本不符将直接拒绝安装（`incompatible-version`）。The plugin declares `engines.dsh` as `>=0.2.1-rc.2 <0.3.0`. Harness checks this range during installation and refuses mismatched versions with `incompatible-version`.
-
-### 本地构建与验证 / Build and verify
-
-需要 Node.js、pnpm、匹配版本的 Harness 包和依赖。Install dependencies, build and run the adapter tests from this directory:
-
-```sh
-pnpm install
-pnpm build
-pnpm test
+```
+E:\...\outputs\dsh-soul-profile
 ```
 
-验证清单：空档案显示首次引导；未勾选同意时不能开始；稍后不保存答案；1/3 覆盖显示未知；2:1 结果保留方向性；保存后重启不再弹问卷；删除后档案不再注入提示词。Verification checklist: first-run dialog for an empty profile; no start without opt-in; Later stores no answers; 1/3 coverage stays unknown; a 2:1 result remains directional; saved profile suppresses repeat onboarding and appears in prompts after restart; deleting the profile removes that prompt section.
+**3.** 重启 Harness
 
-## 通用 Skill 与 CLI / Portable Skill and CLI
+**4.** 重启后自动弹出问卷 → 勾选同意 → 答 24 题 → **保存并启用**
 
-`skill/SKILL.md`、`skill/questions.json`、`skill/schema/` 和 `skill/tools/profile.py` 保留为可移植核心及离线备选方案。其他 Agent 不会自动显示 Harness 窗口；必须由宿主提供交互式 UI 并把生成档案注入 Agent 上下文。详见 `skill/adapters/agent-instructions.md`。The Skill, questionnaire, schema and Python CLI remain as a portable core and offline fallback under `skill/`. Other agents do not automatically get a Harness window: a host must provide its own UI and inject the resulting profile into agent context. See `skill/adapters/agent-instructions.md`.
+装完去 **设置 → 灵魂画像** 能看到入口，就说明成功了。
+
+> ⚠️ **不要用命令行安装。** `dsh plugin add` 会直接报错：
+> `profile "desktop" is managed exclusively by the Electron application`
+> 桌面端 profile 只归 Electron 应用管，CLI 无权操作。
+
+## 装不上？按这个顺序查
+
+| 报错 / 现象 | 原因 | 怎么办 |
+|---|---|---|
+| `incompatible-version` | DSH 版本不在 `>=0.2.1-rc.2 <0.3.0` 内 | 升级 Harness，或改 `package.json` 的 `engines.dsh` |
+| 提示路径无效 | 粘贴的是父目录 | 选到有 `package.json` 的那一层 |
+| 装完没反应 | 没重启 | 完全退出 Harness 再打开 |
+| 设置里没有入口 | 插件被停用 | 设置 → 插件，确认它是启用状态 |
+| 弹窗关了不再出现 | 「稍后」不写状态 | 去设置 → 灵魂画像 手动开始 |
+
+## 非桌面 profile（CLI）
+
+如果你用的是 Web / CLI 版 Harness，可以走命令行：
+
+```sh
+dsh plugin --profile <profile 名> add .
+```
+
+## 本地开发
+
+```sh
+npm install
+npm run verify                              # 类型检查 + 测试 + 构建
+python -m unittest discover -s skill/tests  # 便携 Skill 的测试
+```
+
+改动后要重新 `npm run build`，`lib/` 才会更新。
+
+## 便携 Skill（不用插件也能用）
+
+`skill/` 下是独立于 Harness 的可移植版本：`SKILL.md` + `questions.json` + `tools/profile.py`。
+
+适合把这份问卷接进别的 Agent —— 但需要宿主自己提供交互界面，并负责把生成的档案塞进上下文。接入方式见 `skill/adapters/agent-instructions.md`。
