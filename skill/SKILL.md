@@ -18,7 +18,7 @@ description: 建立、查看、应用、更新或删除可编辑的沟通与协�
 
 ## 建档流程 / Onboarding
 
-1. 在 Harness Web 中，插件会通过首次引导窗口说明用途、局限和保存方式。用户可稍后处理；只有明确勾选同意后才进入题目。 In Harness Web, the plugin explains purpose, limits and storage in its first-run dialog. The user can defer; questions start only after explicit opt-in.
+1. 在 Harness 中，插件会通过首次引导窗口说明用途、局限和保存方式。用户可稍后处理；只有明确勾选同意后才进入题目。 In Harness, the plugin explains purpose, limits and storage in its first-run dialog. The user can defer; questions start only after explicit opt-in.
 2. 使用中英双语点击选择题回答 `questions.json` 内的 24 道题，可返回、跳题或退出。 Answer the 24 bilingual click-choice items from `questions.json`; users can go back, skip or exit.
 3. 检查 8 个维度摘要及答题覆盖数，可按用户自己的描述修改；低覆盖结果不冒充由答题可靠推得。 Review the eight dimension summaries and answer coverage. Users may correct results; low-coverage answers must not be presented as reliable conclusions.
 4. 只有用户点击“保存并启用”后才把摘要写入 Harness profile，并用于后续系统提示词。若选择“不启用”，不保存答案或画像。 Save the summary to the Harness profile and use it in later prompts only after “Save and enable”. “Do not enable” stores neither answers nor profile.
@@ -39,4 +39,4 @@ description: 建立、查看、应用、更新或删除可编辑的沟通与协�
 - `schema/profile.schema.json`：可移植 JSON Schema。 Portable JSON Schema.
 - `tools/profile.py`：无第三方依赖的生成器。 Dependency-free profile generator.
 - `adapters/`：平台接入说明。 Platform adapter guidance.
-- `tests/`：运行 `python -m unittest discover -s tests -v`。Run automated checks with this command.
+- `tests/`：在本 `skill/` 目录下运行 `python -m unittest discover -s tests -v`。Run this from inside `skill/`.

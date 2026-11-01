@@ -1,12 +1,12 @@
-# 灵魂画像 / Soul Profile 2.0.3 — 产品与技术规格 / Product and technical specification
+# 灵魂画像 / Soul Profile — 产品与技术规格 / Product and technical specification
 
 ## 产品目标 / Product goal
 
-在 DeepSeek Harness Web 安装插件后，首次进入引导流程时显示一个可点击的窗口。用户可先阅读说明并同意，再答题、查看摘要、修改结果，最后选择是否保存并启用。Agent 从下一次提示词组装起参考已保存摘要。
+在 DeepSeek Harness 安装插件后，首次进入引导流程时显示一个可点击的窗口。用户可先阅读说明并同意，再答题、查看摘要、修改结果，最后选择是否保存并启用。Agent 从下一次提示词组装起参考已保存摘要。
 
-After installing the DeepSeek Harness Web plugin, the onboarding flow presents a clickable dialog. The user can read the notice, opt in, answer questions, review and edit the summary, then choose whether to save and enable it. The agent uses the saved summary in subsequent prompt assemblies.
+After installing the DeepSeek Harness plugin, the onboarding flow presents a clickable dialog. The user can read the notice, opt in, answer questions, review and edit the summary, then choose whether to save and enable it. The agent uses the saved summary in subsequent prompt assemblies.
 
-Harness 当前实现基于 `settings.onboarding` 列表插槽，安装后首次启动并挂载设置外壳时呈现；“稍后”不保存状态并允许以后再提示。“不启用”会记录拒绝。该插件只声明 Harness Web 目标，不宣称兼容 Desktop 或其他 Agent。 Runtime behavior relies on the `settings.onboarding` list slot and appears when the installed Harness settings shell mounts. “Later” stores no choice and allows another prompt; “Do not enable” records the decline. This adapter targets Harness Web only; it does not claim Desktop or other-agent compatibility.
+Harness 当前实现基于 `settings.onboarding` 列表插槽，安装后首次启动并挂载设置外壳时呈现；“稍后”不保存状态并允许以后再提示。“不启用”会记录拒绝。桌面端与 Web 端共用同一渲染层，兼容范围见 README 的兼容性表。 Runtime behavior relies on the `settings.onboarding` list slot and appears when the installed Harness settings shell mounts. “Later” stores no choice and allows another prompt; “Do not enable” records the decline. Desktop and web share the same renderer; the supported version range is in the README compatibility table.
 
 ## 研究与安全边界 / Research and safety
 
@@ -20,7 +20,7 @@ Harness 当前实现基于 `settings.onboarding` 列表插槽，安装后首次�
 
 - 仓库根目录即插件包（`dsh-soul-profile`）：客户端注册首次引导 UI 和设置管理页，写入本 profile 的配置表单；Host 插件通过 `ctx.systemPrompt.section()` 动态读取档案。 The repository root is the plugin package (`dsh-soul-profile`): the client registers onboarding UI and a settings management page; the Host reads the saved profile dynamically through `ctx.systemPrompt.section()`.
 - 持久化档案仅包含确认后的 Markdown 偏好摘要；不存原始答案、身份信息或隐式推断。 The persisted profile contains only the approved Markdown summary, with no raw answers, identity data or inferred traits.
-- 插件版本与本项目发布版本统一为 `2.0.1`；目标 Harness 发布线为 `0.2.1-rc.2`。Harness UI API 会变化，升级 Harness 后需重新执行类型检查与冒烟验证。 Plugin and project release versions are `2.0.0`; target Harness release line is `0.2.2-alpha.2`. Harness UI APIs may change; the install guide requires runtime acceptance in a test profile.
+- 插件版本即项目发布版本；构建基线为 Harness 运行时 `0.2.1-rc.2`，支持范围 `>=0.2.1-rc.2 <0.3.0`。Harness UI API 会变化，升级 Harness 后需重新执行类型检查与冒烟验证。 The plugin version is the project release version; it is built against Harness runtime `0.2.1-rc.2` and supports `>=0.2.1-rc.2 <0.3.0`. Harness UI APIs may change, so re-run type checks and smoke tests after upgrading.
 - `skill/tools/profile.py`、`skill/schema/profile.schema.json` 和 `skill/SKILL.md` 是可移植离线核心；它们不会让其他 Agent 自动弹出窗口。 `skill/tools/profile.py`, `skill/schema/profile.schema.json` and `skill/SKILL.md` form the portable offline core; they do not make other agents display a dialog automatically.
 
 ## 验收条件 / Acceptance criteria

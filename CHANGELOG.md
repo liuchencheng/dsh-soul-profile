@@ -11,7 +11,7 @@
 - **目录结构按 DSH 包命名规范重排**：仓库根目录即插件包（`package.json` 的 `name` 为 `dsh-soul-profile`），不再有 `deepseek-harness/` 这层非标准目录。 The layout now follows DSH package naming: the repository root **is** the plugin package (`dsh-soul-profile`); the non-standard `deepseek-harness/` level is gone.
 - 顶层目录由 `soul-profile/` 改为 `dsh-soul-profile/`，与包名一致。 The top-level folder is now `dsh-soul-profile/`, matching the package name.
 - 便携 Skill 相关文件（`SKILL.md`、`questions.json`、`scoring.md`、`schema/`、`tools/`、`tests/`、`adapters/`、`examples/`）统一收进 `skill/`。 Portable Skill files moved under `skill/`.
-- 构建与测试命令改在仓库根执行：`pnpm build` / `pnpm test` / `python -m unittest discover -s skill/tests`。 Build and test commands now run from the repository root.
+- 构建与测试命令改在仓库根执行：`npm run build` / `npm test` / `python -m unittest discover -s skill/tests`。 Build and test commands now run from the repository root.
 - 安装路径随之变化：在 Harness 里粘贴的是**仓库根目录**，不再是子目录。 The install path is now the repository root rather than a subfolder.
 
 ## 2.0.6
