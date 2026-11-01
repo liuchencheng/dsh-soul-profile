@@ -1,5 +1,10 @@
 # 更新记录 / Changelog
 
+## 2.1.5
+
+- README 开头改用作者本人的版本：开头「承认吧，你受够了…」直接戳痛点，并补上「随便一句话就被塞进记忆」这一条，核心句从「你自己说」改为「先创造一个潜意识状态下的你」。 The README opening now uses the author's own wording: it opens with “admit it”, adds the complaint about one casual remark being filed as memory, and reframes the pitch as “create a subconscious version of you”.
+- 补上完整英文对照，逐段对应中文，不再是一句概括。 Added a full English counterpart that follows the Chinese paragraph by paragraph instead of a single summary line.
+
 ## 2.1.4
 
 - 重写 README 开头：从「这个插件做什么」改成「为什么要有它」——每开一个新会话，AI 都要重新认识你一遍；让它自己从聊天里总结又是个看不见的黑箱。 Rewrote the README opening: instead of describing what the plugin does, it now explains why it exists — every new session starts from zero, and letting the model summarise you from past chats is a black box.
