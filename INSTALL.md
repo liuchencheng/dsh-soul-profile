@@ -7,7 +7,7 @@
 **2.** 粘贴本仓库根目录的绝对路径 —— 就是有 `package.json` 的那一层：
 
 ```
-E:\...\outputs\dsh-soul-profile
+<仓库所在位置>\dsh-soul-profile
 ```
 
 **3.** 重启 Harness

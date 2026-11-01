@@ -15,7 +15,7 @@
 3. **重启 Harness**
 
 ```
-E:\...\outputs\dsh-soul-profile
+<仓库所在位置>\dsh-soul-profile
 ```
 
 > ⚠️ 别用 `dsh plugin add`：命令行明确禁止操作 `desktop` profile，桌面端只能走上面的界面。
