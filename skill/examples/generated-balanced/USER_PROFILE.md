@@ -18,7 +18,7 @@
 | 协作自主度 / Collaboration autonomy | 混合 / Mixed | 2/3 | 一般 / Medium |
 | 压力时的支持方式 / Support under stress | 混合 / Mixed | 2/3 | 一般 / Medium |
 
-## 建议的协作默认方式 / Suggested collaboration defaults
+## 协作方式（请照此执行） / How to work with me (follow these)
 
 - 暂无可用的明确倾向；请询问我希望怎样协作。 / No clear, usable defaults yet; please ask what would help.
 

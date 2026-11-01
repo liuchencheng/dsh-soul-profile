@@ -1,5 +1,12 @@
 # 更新记录 / Changelog
 
+## 2.1.2
+
+- 便携 CLI（`skill/tools/profile.py`）的默认建议改为与插件一致的祈使句：此前只有插件改成了可执行指令，CLI 仍输出「计划保留弹性，允许过程中调整」这类描述句，同一条档案走两条路径得到两种质量。 The portable CLI now emits the same imperative instructions as the plugin; previously only the plugin had been upgraded, so the same profile produced different quality depending on the path taken.
+- CLI 输出的建议小节改名为「协作方式（请照此执行）」，与插件注入的「请照此协作」对齐。 Renamed the CLI's defaults section to “How to work with me (follow these)”.
+- 两处文案互加交叉引用注释，避免 TS 与 Python 两侧各自漂移。 Added cross-reference comments on both sides so the TypeScript and Python copies cannot drift silently.
+- 覆盖率测试不再断言具体文案，改为断言「7 条建议、每条含分隔符、含预期维度」，改文案时不会误报。 The coverage test now asserts structure (seven defaults, separator present, expected dimension included) instead of exact copy.
+
 ## 2.1.1
 
 - 说明文档重写为「直接照做」的结构：README 首屏就是装 3 步 + 用 4 行表格，兼容性与边界压到后面；INSTALL 变成编号步骤 + 排错表。 Rewrote the docs around "just do this": the README opens with a three-step install and a four-row usage table, pushing compatibility and design limits down; INSTALL is now numbered steps plus a troubleshooting table.

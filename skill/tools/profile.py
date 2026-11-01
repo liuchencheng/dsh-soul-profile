@@ -55,15 +55,18 @@ def build_profile(answers, reviewed=False, overrides=None, today=None, consent=F
         raise ValueError("用户补充偏好必须是字符串数组。 User-provided overrides must be an array of strings.")
     dimensions = score_answers(answers)
     defaults = []
+    # 与插件注入的提示词保持一致：每条都写成可执行的动作（做什么 + 不要做什么），
+    # 而不是形容用户的形容词——系统提示里祈使句的遵守率明显更高。
+    # 文案与 `src/client/index.tsx` 的 INSTRUCTIONS / INSTRUCTIONS_EN 一一对应，改动时两边同步。
     recommendations = {
-      "structure": (("计划保留弹性，允许过程中调整。", "Keep plans flexible and adapt as we go."), ("提供清晰步骤和明确的下一步。", "Give me clear steps and next actions.")),
-      "social_energy": (("采用平静、专注的交流方式。", "Keep the exchange calm and focused."), ("适合时采用积极、协作式的交流方式。", "Use an energetic, collaborative exchange when useful.")),
-      "information_style": (("先提供具体例子和细节。", "Lead with concrete examples and details."), ("先介绍整体概况和规律。", "Lead with the overview and patterns.")),
-      "decision_basis": (("在呈现证据的同时，说明对人的影响与相关价值。", "Include human impact and values alongside evidence."), ("明确说明证据和决策标准。", "State evidence and criteria explicitly.")),
-      "expression": (("回答简洁、语气含蓄。", "Keep responses concise and understated."), ("补充背景，采用温暖且更有表现力的语气。", "Add context with a warm, expressive tone.")),
-      "feedback": (("结合背景，以温和方式提供反馈。", "Frame feedback gently and with context."), ("坦率、明确地提供反馈。", "Give candid, explicit feedback.")),
-      "autonomy": (("工作过程中通过协作沟通保持同步。", "Check in collaboratively as work develops."), ("独立推进，并在关键节点汇报。", "Work independently and report at milestones.")),
-      "stress_support": (("先理解和回应感受，再讨论解决办法。", "Acknowledge feelings before problem-solving."), ("先梳理优先级和切实可行的下一步。", "Prioritize practical next steps first."))}
+      "structure": (("先给方向再细化——面对开放任务时先给 2–3 条可选路径，等我选定后再展开，不要一上来就输出完整计划。", "Offer direction before detail: for open-ended work, give 2–3 routes and expand only after I pick one; do not open with a full plan."), ("先给完整步骤——动手前列出步骤与顺序，标出下一步，再按顺序执行。", "Give the full sequence: list the steps and their order before starting, name the next action, then work through them.")),
+      "social_energy": (("保持一对一、低干扰的交流——不堆寒暄，也不引入多方视角，直接对着我说。", "Keep the exchange one-to-one and low-noise: skip pleasantries and multi-party framing, address me directly."), ("可以更外向地展开——适度提议、追问、给出多方视角，保持交流的节奏。", "Lean outward: offer suggestions, ask follow-ups, and bring in more than one angle to keep the exchange lively.")),
+      "information_style": (("先给具体例子——用一个真实案例开场，再归纳规律，不要先讲抽象框架。", "Lead with a concrete example: open with a real case, then generalise; do not start with an abstract framework."), ("先给整体框架——用一两句话说明全貌和结构，再进入细节。", "Lead with the whole picture: state the overall shape in one or two sentences, then go into detail.")),
+      "decision_basis": (("决策建议要说明对人的影响——除了证据，也指出这个选择会影响谁、代价是什么。", "When recommending, say who is affected: alongside the evidence, name who this choice touches and what it costs them."), ("决策建议要摆出证据和判断标准——说明依据是什么、按什么标准比较，再给结论。", "When recommending, state the evidence and the criteria: say what the basis is and what standard you compared against before concluding.")),
+      "expression": (("回答保持简短克制——先给结论，省略铺垫，不要为了完整而扩写。", "Stay brief and understated: lead with the conclusion, drop preamble, and do not expand just to be complete."), ("回答要补足背景——结论之后说明原因和必要上下文，不要只丢一个结论。", "Add context: after the conclusion, explain the reasoning and the context that matters; do not hand over a bare conclusion.")),
+      "feedback": (("指出问题时先肯定再提异议——先说哪里做对了，再指出不一致的地方，避免直接否定。", "When pointing out a problem, acknowledge first: say what works, then name the inconsistency; avoid flat negation."), ("指出问题要直接——先说不一致的地方和影响，不要用缓冲语绕开。", "Be direct when pointing out a problem: name the inconsistency and its impact first, without cushioning phrases.")),
+      "autonomy": (("过程中保持同步——每完成一个阶段简短汇报，遇到岔路先问我。", "Stay in sync while working: report briefly at each stage and ask before taking a fork."), ("目标明确时直接做完再汇报——中途不要问“要不要继续”，只在需要我决策时停下。", "When the goal is clear, finish the work and report once: do not ask “shall I continue”; stop only where I must decide.")),
+      "stress_support": (("我说压力或麻烦时，先别急着给方案——先回应我说的事实和感受，再问要不要建议。", "When I describe stress or trouble, do not jump to solutions: acknowledge what I said and how it lands, then ask whether I want advice."), ("我说压力或麻烦时，先给可执行的下一步——列出能做的一两件事，再补充说明。", "When I describe stress or trouble, lead with a doable next step: name one or two things I can act on, then explain."))}
     for key, dim in dimensions.items():
         if dim["pole"] in ("low", "high") and dim["confidence"] != "low":
             pair = recommendations[key][0 if dim["pole"] == "low" else 1]
@@ -106,7 +109,7 @@ def render_markdown(profile, lang=None):
         name_en = d.get("name_en") or d.get("name") or ""
         dimension_name = text(name_zh, name_en)
         lines.append(f"| {dimension_name} | {labels[d['pole']]} | {d['answered']}/3 | {coverage[d['confidence']]} |")
-    lines += ["", "## " + text("建议的协作默认方式", "Suggested collaboration defaults"), ""]
+    lines += ["", "## " + text("协作方式（请照此执行）", "How to work with me (follow these)"), ""]
     defaults = profile["collaboration_preferences"]["response_defaults"]
     empty_defaults = text("暂无可用的明确倾向；请询问我希望怎样协作。", "No clear, usable defaults yet; please ask what would help.")
     lines += [f"- {x}" for x in defaults] if defaults else ["- " + empty_defaults]

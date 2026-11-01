@@ -111,7 +111,11 @@ class ProfileTests(unittest.TestCase):
         p = profile.build_profile(answers, consent=True, lang="zh")
         markdown = profile.render_markdown(p, lang="zh")
         self.assertIn("1/8 个维度答题不足", markdown)
-        self.assertIn("采用积极、协作式的交流方式", markdown)
+        # 覆盖不足的 structure 不出建议，但其余维度仍要给出可执行指令
+        defaults = p["collaboration_preferences"]["response_defaults"]
+        self.assertEqual(len(defaults), 7)
+        self.assertTrue(all("——" in d for d in defaults))
+        self.assertTrue(any("更外向" in d for d in defaults))
 
     def test_no_answers_is_unknown_and_null(self):
         out = profile.score_answers({})

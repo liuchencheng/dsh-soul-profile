@@ -192,6 +192,7 @@ function SoulProfileOnboarding(props: Props): ReactNode {
 /**
  * 注入提示词的正文：每一极写成一个可执行的动作，而不是形容用户的形容词。
  * 系统提示里命令句的遵守率明显高于描述句，所以这里全部用祈使句。
+ * 改动时请同步 `skill/tools/profile.py` 的 `recommendations`，离线 CLI 用的是同一套文案。
  */
 const INSTRUCTIONS: Record<string, [string, string]> = {
   structure: [
