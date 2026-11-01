@@ -1,5 +1,11 @@
 # 更新记录 / Changelog
 
+## 2.1.9
+
+- 文档回到单文件双语：`README.md` / `INSTALL.md` 每节先中文、再一段英文，不折叠、不分文件、不依赖任何 HTML。 Back to single-file bilingual docs: each section in `README.md` and `INSTALL.md` shows Chinese first, then an English block — no collapsing, no separate files, no HTML dependency.
+- 删除 `README.en.md` / `INSTALL.en.md`，去掉语言切换链接。 Removed `README.en.md` / `INSTALL.en.md` and the language-switch links.
+- 中文仍是零改动（718 / 331 字逐字一致）。 The Chinese remains byte-for-byte unchanged (718 and 331 characters).
+
 ## 2.1.8
 
 - 放弃 `<details>` 折叠，改为「中文主文件 + 独立英文文件」：`README.md` / `INSTALL.md` 现在只含中文，英文移到 `README.en.md` / `INSTALL.en.md`，顶部一行互相切换。 Dropped the `<details>` approach in favour of separate files: `README.md` and `INSTALL.md` are Chinese-only now, with English in `README.en.md` and `INSTALL.en.md` and a one-line language switch at the top.
