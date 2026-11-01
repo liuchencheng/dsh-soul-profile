@@ -20,7 +20,8 @@
 > `profile "desktop" is managed exclusively by the Electron application`
 > 桌面端 profile 只归 Electron 应用管，CLI 无权操作。
 
-**English**
+<details>
+<summary>English</summary>
 
 **1.** Open Harness → **Plugins → Add plugin**
 
@@ -40,6 +41,8 @@ Once **Settings → Soul Profile** shows an entry, the install worked.
 > `profile "desktop" is managed exclusively by the Electron application`
 > The desktop profile belongs to the Electron app; the CLI has no authority over it.
 
+</details>
+
 ## 装不上？按这个顺序查
 
 | 报错 / 现象 | 原因 | 怎么办 |
@@ -50,7 +53,8 @@ Once **Settings → Soul Profile** shows an entry, the install worked.
 | 设置里没有入口 | 插件被停用 | 设置 → 插件，确认它是启用状态 |
 | 弹窗关了不再出现 | 「稍后」不写状态 | 去设置 → 灵魂画像 手动开始 |
 
-**English**
+<details>
+<summary>English</summary>
 
 | Error / symptom | Cause | Fix |
 |---|---|---|
@@ -60,6 +64,8 @@ Once **Settings → Soul Profile** shows an entry, the install worked.
 | No entry in Settings | The plugin is disabled | Settings → Plugins, make sure it is enabled |
 | Dialog closed and never returns | “Later” stores no state | Go to Settings → Soul Profile and start manually |
 
+</details>
+
 ## 非桌面 profile（CLI）
 
 如果你用的是 Web / CLI 版 Harness，可以走命令行：
@@ -68,13 +74,16 @@ Once **Settings → Soul Profile** shows an entry, the install worked.
 dsh plugin --profile <profile 名> add .
 ```
 
-**English**
+<details>
+<summary>English</summary>
 
 If you run the web or CLI build of Harness, use the command line instead:
 
 ```sh
 dsh plugin --profile <profile name> add .
 ```
+
+</details>
 
 ## 本地开发
 
@@ -86,7 +95,8 @@ python -m unittest discover -s skill/tests  # 便携 Skill 的测试
 
 改动后要重新 `npm run build`，`lib/` 才会更新。
 
-**English**
+<details>
+<summary>English</summary>
 
 ```sh
 npm install
@@ -96,14 +106,19 @@ python -m unittest discover -s skill/tests  # portable Skill tests
 
 Re-run `npm run build` after any change, or `lib/` stays stale.
 
+</details>
+
 ## 便携 Skill（不用插件也能用）
 
 `skill/` 下是独立于 Harness 的可移植版本：`SKILL.md` + `questions.json` + `tools/profile.py`。
 
 适合把这份问卷接进别的 Agent —— 但需要宿主自己提供交互界面，并负责把生成的档案塞进上下文。接入方式见 `skill/adapters/agent-instructions.md`。
 
-**English**
+<details>
+<summary>English</summary>
 
 `skill/` holds a portable version that does not depend on Harness: `SKILL.md` + `questions.json` + `tools/profile.py`.
 
 It is meant for wiring this questionnaire into another agent — but the host must supply the interactive UI and feed the resulting profile into its context. See `skill/adapters/agent-instructions.md` for the integration notes.
+
+</details>

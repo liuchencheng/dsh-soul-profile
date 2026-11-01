@@ -19,7 +19,8 @@
 
 ---
 
-**English**
+<details>
+<summary>English</summary>
 
 Admit it — you're fed up with every new session starting with the model getting to know you all over again.
 
@@ -37,6 +38,8 @@ From then on, every conversation opens with it already knowing how to work with 
 
 Turn it off or delete it whenever you like. It's just text — nothing reaches the prompt until you hit enable.
 
+</details>
+
 ---
 
 ## 装：3 步
@@ -45,11 +48,14 @@ Turn it off or delete it whenever you like. It's just text — nothing reaches t
 2. 粘贴**本目录**的绝对路径（就是有 `package.json` 的这一层）
 3. **重启 Harness**
 
-**English**
+<details>
+<summary>English</summary>
 
 1. Open Harness → **Plugins → Add plugin**
 2. Paste the absolute path of **this folder** — the one containing `package.json`
 3. **Restart Harness**
+
+</details>
 
 ## 用
 
@@ -64,7 +70,8 @@ Turn it off or delete it whenever you like. It's just text — nothing reaches t
 
 删除档案后，引导弹窗也不会再自动出现——想重新填写请自己去 **设置 → 灵魂画像**。
 
-**English**
+<details>
+<summary>English</summary>
 
 | I want to… | Where |
 |---|---|
@@ -76,6 +83,8 @@ Turn it off or delete it whenever you like. It's just text — nothing reaches t
 Closing the dialog is not the same as disabling the profile. To stop it **auto-appearing**, finish the questionnaire and pick “Do not enable”, or disable it in Settings afterwards.
 
 After deleting, the onboarding dialog will not come back on its own — go to **Settings → Soul Profile** to start again.
+
+</details>
 
 ## 兼容
 
@@ -96,7 +105,8 @@ After deleting, the onboarding dialog will not come back on its own — go to **
 
 > 这是 `@deepseek-ai/dsh` 运行时版本，不是桌面端安装包版本。每个人的版本可能不同。
 
-**English**
+<details>
+<summary>English</summary>
 
 Requires **DSH runtime ≥ `0.2.1-rc.2` and `< 0.3.0`**.
 
@@ -115,6 +125,8 @@ To check your version: the `version` field of `<install dir>/resources/app/dsh/p
 
 > This is the `@deepseek-ai/dsh` runtime version, not the desktop installer version. Yours may differ.
 
+</details>
+
 ## 目录
 
 ```
@@ -127,7 +139,8 @@ dsh-soul-profile/
 └── README.md · INSTALL.md · SPEC.md · CHANGELOG.md
 ```
 
-**English**
+<details>
+<summary>English</summary>
 
 ```
 dsh-soul-profile/
@@ -139,6 +152,8 @@ dsh-soul-profile/
 └── README.md · INSTALL.md · SPEC.md · CHANGELOG.md
 ```
 
+</details>
+
 ## 边界
 
 - 只记录**你确认过的摘要**，原始答案不保存
@@ -146,12 +161,15 @@ dsh-soul-profile/
 - 你的当前指令永远优先于档案
 - 档案只属于当前 profile
 
-**English**
+<details>
+<summary>English</summary>
 
 - Only the summary **you confirmed** is stored; raw answers are not
 - A dimension with fewer than 2 answers is recorded as unknown
 - Your current instruction always outranks the profile
 - The profile belongs to one profile only
+
+</details>
 
 ## 开发
 
@@ -164,7 +182,8 @@ python scripts/check-instruction-parity.py  # 校验插件与 CLI 的指令文�
 
 指令文案在 `src/client/index.tsx`（注入系统提示）和 `skill/tools/profile.py`（离线 CLI）各存一份，改一处必须同步另一处，最后一条命令就是查这个。
 
-**English**
+<details>
+<summary>English</summary>
 
 ```sh
 npm install
@@ -174,3 +193,5 @@ python scripts/check-instruction-parity.py  # verify the plugin and CLI instruct
 ```
 
 The instruction text lives in two places — `src/client/index.tsx` (injected into the system prompt) and `skill/tools/profile.py` (offline CLI). Change one, change the other; the last command checks it.
+
+</details>

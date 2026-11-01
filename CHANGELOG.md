@@ -1,5 +1,10 @@
 # 更新记录 / Changelog
 
+## 2.1.7
+
+- 英文段落全部折叠进 `<details><summary>English</summary>`：GitHub 上默认收起，首屏只剩中文，需要英文时点开。 All English blocks are now collapsed behind `<details><summary>English</summary>`: GitHub shows the Chinese first screen and reveals English on click.
+- 中文一字未动；README 7 处、INSTALL 5 处，标签配对已校验。 The Chinese is untouched; seven blocks in the README and five in INSTALL, with balanced tags.
+
 ## 2.1.6
 
 - README 与 INSTALL 全文改为中英对照：中文原样保留，每个小节后补英文，表格各配一份英译。 Both README and INSTALL are now bilingual: the Chinese is untouched, every section is followed by an English counterpart, and each table has an English version.
