@@ -1,5 +1,11 @@
 # 更新记录 / Changelog
 
+## 2.1.8
+
+- 放弃 `<details>` 折叠，改为「中文主文件 + 独立英文文件」：`README.md` / `INSTALL.md` 现在只含中文，英文移到 `README.en.md` / `INSTALL.en.md`，顶部一行互相切换。 Dropped the `<details>` approach in favour of separate files: `README.md` and `INSTALL.md` are Chinese-only now, with English in `README.en.md` and `INSTALL.en.md` and a one-line language switch at the top.
+- 原因：部分 Markdown 预览器只认 `<details>` 开始标签、会把 `</details>` 当普通文字输出，折叠失效并露出标签。 Some Markdown previewers only recognise the opening `<details>` tag and print `</details>` as literal text, so the collapse fails and the tag leaks.
+- 中文零改动：逐字符比对确认 718 / 331 个汉字与上一版完全一致。 The Chinese is byte-for-byte unchanged: 718 and 331 CJK characters verified identical to the previous version.
+
 ## 2.1.7
 
 - 英文段落全部折叠进 `<details><summary>English</summary>`：GitHub 上默认收起，首屏只剩中文，需要英文时点开。 All English blocks are now collapsed behind `<details><summary>English</summary>`: GitHub shows the Chinese first screen and reveals English on click.
