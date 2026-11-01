@@ -1,5 +1,10 @@
 # 更新记录 / Changelog
 
+## 2.1.11
+
+- 核心句改为「先根据你做出的选择，画出你的灵魂画像，放在 AI 一开始就能读到的地方」——把产品名「灵魂画像」直接写进主张里。 The pitch line now reads “draw your Soul Profile from the choices you make, and place it where the AI reads first”, putting the product name into the claim itself.
+- 英文同步：`draw your Soul Profile from the choices you make`。 English updated to match.
+
 ## 2.1.10
 
 - 开头核心句改写：从「先创造一个潜意识状态下的你」改为「先构建出你潜意识下做出的选择」，强调记下来的是**选择**而不是一个人格副本。 Reworded the pitch line from “create a subconscious version of you” to “build out the choices you make subconsciously”, so what gets written down is a set of choices, not a personality copy.
