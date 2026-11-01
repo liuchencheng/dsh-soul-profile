@@ -8,12 +8,12 @@
 也受够了随意说一句话，AI 就如获至宝一样将其加入到记忆中——让 AI 自己从聊天里总结你。
 但那是个黑箱：它总结成什么样、有没有总结歪，你看不见。
 
-这个插件换了个方向：**先创造一个潜意识状态下的你，放在它一开始就能读到的地方。**
+这个插件换了个方向：**先构建出你潜意识下做出的选择，放在AI一开始就能读到的地方。**
 
 24 道选择题，3 分钟。答完你先看摘要，不满意就改，改到满意再启用。
 之后每次对话，它开局就知道该怎么跟你配合——不用你重复，也不用它猜。
 
-（说清楚一点：这不是人格测试，也不是心理诊断。它只是把你想要的配合方式写下来。）
+（这不是人格测试，也不是心理诊断。它只是把你想要的配合方式写下来。）
 
 不想用了随时关掉或删掉。它只是一段文字，你不点"启用"，它不会进提示词。
 
@@ -28,12 +28,12 @@ You've said "just give me the conclusion" plenty of times. It remembers this ses
 
 You're just as fed up with the other thing: drop one casual sentence and the model treats it like treasure, files it into memory, and starts summarising who you are from your chats. That's a black box — you can't see what it concluded, or whether it got you wrong.
 
-This plugin goes the other way: **create a subconscious version of you, and place it where the model reads first.**
+This plugin goes the other way: **build out the choices you make subconsciously, and place them where the AI reads first.**
 
 24 click-choice items, 3 minutes. You read the summary first, change whatever doesn't feel right, and enable it once it does.
 From then on, every conversation opens with it already knowing how to work with you — no repeating yourself, no guessing.
 
-(To be clear: this is not a personality test or a psychological assessment. It just writes down how you want to be worked with.)
+(This is not a personality test or a psychological assessment. It just writes down how you want to be worked with.)
 
 Turn it off or delete it whenever you like. It's just text — nothing reaches the prompt until you hit enable.
 

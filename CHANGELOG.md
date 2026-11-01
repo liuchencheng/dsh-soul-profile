@@ -1,5 +1,11 @@
 # 更新记录 / Changelog
 
+## 2.1.10
+
+- 开头核心句改写：从「先创造一个潜意识状态下的你」改为「先构建出你潜意识下做出的选择」，强调记下来的是**选择**而不是一个人格副本。 Reworded the pitch line from “create a subconscious version of you” to “build out the choices you make subconsciously”, so what gets written down is a set of choices, not a personality copy.
+- 括号里的「说清楚一点：」删掉，语气更平。 Dropped the “to be clear” opener in the parenthetical for a flatter tone.
+- 英文同步更新，与中文逐句对应。 Updated the English to match line by line.
+
 ## 2.1.9
 
 - 文档回到单文件双语：`README.md` / `INSTALL.md` 每节先中文、再一段英文，不折叠、不分文件、不依赖任何 HTML。 Back to single-file bilingual docs: each section in `README.md` and `INSTALL.md` shows Chinese first, then an English block — no collapsing, no separate files, no HTML dependency.
