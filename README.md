@@ -77,6 +77,9 @@ dsh-soul-profile/
 
 ```sh
 npm install
-npm run verify        # 类型检查 + 测试 + 构建
-python -m unittest discover -s skill/tests
+npm run verify                              # 类型检查 + 测试 + 构建
+python -m unittest discover -s skill/tests  # 便携 Skill 的测试
+python scripts/check-instruction-parity.py  # 校验插件与 CLI 的指令文案是否一致
 ```
+
+指令文案在 `src/client/index.tsx`（注入系统提示）和 `skill/tools/profile.py`（离线 CLI）各存一份，改一处必须同步另一处，最后一条命令就是查这个。
